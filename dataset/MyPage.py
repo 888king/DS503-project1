@@ -20,21 +20,21 @@ for x in range(0, 50):
 
 people_country = list()
 count_code = list()
-for x in range(1, n):
-    random_index = randrange(len(b))
-    people_country.append(b[random_index])
+for x in range(n):
+    random_index = random.randint(1, len(b))
+    people_country.append(b[random_index - 1])
     count_code.append(random_index)
 
 hobby = pandas.read_csv('hobbies.csv')
 hobby_list = hobby["hobby"].tolist()
 people_hobby = list()
-for x in range(1, n):
+for x in range(n):
     people_hobby.append(random.choice(hobby_list))
 
 MyPage = pandas.DataFrame({
-    'ID': range(1,n),
+    'ID': range(1,n+1),
     'Name': people,
     'Nationality': people_country,
     'Country_Code': count_code,
     'Hobby': people_hobby})
-
+MyPage.to_csv('./MyPage.csv')
