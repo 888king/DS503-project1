@@ -1,29 +1,3 @@
-import random
-import pandas
-
-n = 200
-relationships = ['collegefriend', 'girlfriend', 'boyfriend', 'family', 'highschoolfriend', 'childhoodfriend', 'colleague']
-
-IDs = []
-friends = []
-dates = []
-descs = []
-for i in range(n):
-    ID = random.randint(1, 200000)
-    IDs.append(ID)
-    friend = random.randint(1, 200000)
-    while(friend == ID):
-        friend = random.randint(1, 200000)
-    friends.append(friend)
-    dates.append(random.randint(1, 1000000))
-    descs.append(relationships[random.randint(0, 6)])
-    print(i+1, ' records have been generated.')
-AllFriends = pandas.DataFrame({
-    'FriendRel': range(1, n+1),
-    'PersonID': IDs,
-    'MyFriend': friends,
-    'DateofFriendship': dates,
-    'Desc': descs
-})
-print(AllFriends)
-AllFriends.to_csv('./AllFriends.csv')
+version https://git-lfs.github.com/spec/v1
+oid sha256:ef734be344dd6f83fd10fc8ed569069301de369033bf09451f11d2bd6459fa68
+size 823
