@@ -17,6 +17,7 @@ for i in range(n):
     friends.append(friend)
     dates.append(random.randint(1, 1000000))
     descs.append(relationships[random.randint(0, 6)])
+    print(i+1, ' records have been generated.')
 AllFriends = pandas.DataFrame({
     'FriendRel': range(1, n+1),
     'PersonID': IDs,
@@ -25,3 +26,4 @@ AllFriends = pandas.DataFrame({
     'Desc': descs
 })
 print(AllFriends)
+AllFriends.to_csv('./AllFriends.csv')

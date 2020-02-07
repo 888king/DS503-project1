@@ -13,6 +13,7 @@ for i in range(n):
     pages.append(random.randint(1, 200000))
     types.append(accesses[random.randint(0, 2)])
     times.append(random.randint(1, 1000000))
+    print(i+1, ' records have been generated.')
 AccessLog = pandas.DataFrame({
     'AccessID': range(1, n+1),
     'ByWho': whos,
@@ -20,3 +21,5 @@ AccessLog = pandas.DataFrame({
     'TypeOfAccess': types,
     'AccessTime': times
 })
+print(AccessLog)
+AccessLog.to_csv('./AccessLog.csv')
